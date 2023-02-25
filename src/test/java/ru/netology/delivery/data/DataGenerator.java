@@ -4,12 +4,10 @@ import com.github.javafaker.Faker;
 import lombok.Value;
 import lombok.val;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
-import java.util.Random;
+
 
 public class DataGenerator {
+    private static Faker faker;
     private DataGenerator() {
     }
 
@@ -20,8 +18,8 @@ public class DataGenerator {
     }
 
     public static String generateCity(String locale) {
-        // TODO: добавить логику для объявления переменной city и задания её значения, генерацию можно выполнить
-        // с помощью Faker, либо используя массив валидных городов и класс Random
+          faker = new Faker(new Locale("ru"));
+          String city = faker.address().city();
         return city;
     }
 
